@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Sneakers</title>
+    <link rel="stylesheet" href="style.css" />
+    <link href="queries.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+      <link
+      rel="preconnect"
+      href="https://fonts.googleapis.com"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+</html>
+<body>
+  <div class="page">
+    <div class="card">
+      <header>
+        <div class="header">
+          <div class="headerLeft">
+            <div class="hamburger">
+              <div class="prilog"></div>
+              <div class="prilog"></div>
+              <div class="prilog"></div>
+            </div>
+            <div class="logo">sneakers</div>
+            <nav class="navigacija">
+              <ul>
+                <li><a href="#"> Collections</a></li>
+                <li><a href="#">Man</a></li>
+                <li><a href="#">Woman</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+              </ul>
+            </nav>
+          </div>
+          <div class="headerRight">
+            <div class="sumprice"></div>
+            <i
+              class="fa fa-shopping-cart btnH shoppingCartButton"
+              style="font-size: 30px"
+            ></i>
+            <img src="me.jpg" alt="ja" class="userPhoto" />
+          </div>
+        </div>
+      </header>
+      <div class="hamburgerMobile hidden">
+        <a href="#" class="hamburgerLink">Collections</a>
+        <a href="#" class="hamburgerLink">Men</a>
+        <a href="#" class="hamburgerLink">Women</a>
+        <a href="#" class="hamburgerLink">About</a>
+        <a href="#" class="hamburgerLink">Contact</a>
+      </div>
+      <!-- SLIDER -->
+      <div class="slider">
+        <div class="slide">
+            <img src="sneak1.jpg" alt="" class="" >
+          </div>
+
+        <div class="slide">
+            <img src="sneak2.jpg" alt="" class="" >
+
+        </div>
+
+        <div class="slide">
+            <img src="sneak3.jpg" alt="" class="" >
+
+          </div>
+
+          <div class="slide">
+            <img src="sneak4.jpg" alt="" class="" >
+          </div>
+
+        <button class="slider__btn slider__btn--left">&larr;</button>
+        <button class="slider__btn slider__btn--right">&rarr;</button>
+        <div class="dots"></div>
+      </div>
+      <!-- KARTICA -->
+      <div class="producstOnCart hide">
+        <div class="overlay"></div>
+        <div class="top">
+          <button id="closeButton">
+            <i class="fa fa-close"></i>
+          </button>
+          <h3>Cart</h3>
+        </div>
+        <div id="buyItems">
+          <!-- <h4 class="empty">Your shopping cart is empty</h4> -->
+        </div>
+        <button class="btn checkout ">Check out</button>
+      </div>
+
+      <div class="product">
+        <div class="images">
+          <div class="main-img-container">
+            <img src="sneak1.jpg" alt="photo" class="main-img" />
+          </div>
+
+          <div class="images-small">
+            <img src="sneak1.jpg" alt="photo" class="small-img img-1" />
+            <img src="sneak2.jpg" alt="photo" class="small-img img-2" />
+            <img src="sneak3.jpg" alt="photo" class="small-img img-3" />
+            <img src="sneak4.jpg" alt="photo" class="small-img img-4" />
+          </div>
+        </div>
+
+        <div class="text">
+          <p class="comp">SNEAKERS COMPANY</p>
+          <br />
+          <h1>Fall Limited Edition<br />Sneakers</h1>
+          <p class="grey">
+            It is a long established fact that a reader will be distracted by
+            the readable content of a page when looking at its layout. The point
+            of that it has a
+          </p>
+          <div class="sveijene">
+            <div class="item">
+              <div class="item">
+                <div>$<span class="price">125.00</span></div>
+                <div class="discount">50%</div>
+              </div>
+            </div>
+            <p class="oldPrice">$250.00</p>
+          </div>
+          <div class="inLine">
+            <div class="counter">
+              <button class="btn-minus">-</button>
+              <input type="number" value="0" class="quantity" />
+              <button class="btn-plus">+</button>
+            </div>
+          </div>
+
+          <div class="modal hidden">
+            <div class="overlay hidden"></div>
+            <button class="close-modal">&times;</button>
+            <div class="main-img-container">
+              <img src="sneak1.jpg" alt="Image of sneakers" class="main-img" />
+            </div>
+
+            <div class="images-small">
+              <img
+                src="sneak1.jpg"
+                alt="Image of sneakers"
+                class="modal-img-1"
+              />
+              <img
+                src="sneak2.jpg"
+                alt="Image of sneakers"
+                class="modal-img-2"
+              />
+              <img
+                src="sneak3.jpg"
+                alt="Image of sneakers"
+                class="modal-img-3"
+              />
+              <img
+                src="sneak4.jpg"
+                alt="Image of sneakers"
+                class="modal-img-4"
+              />
+            </div>
+          </div>
+
+          <button class="add">
+            <i class="fa fa-shopping-cart" style="font-size: 18px"></i> Add to
+            card
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
