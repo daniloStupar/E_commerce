@@ -65,12 +65,16 @@ overlayEl.addEventListener("click", closeModal);
 
 const price = document.querySelector(".price");
 const totalPrice = document.querySelector(".sumprice");
-let quantity = 0;
+totalPrice.style.opacity = localStorage["Quantity"] ? "1" : "0";
+
+let quantity = Number(localStorage["Quantity"] ? localStorage["Quantity"] : 0);
+document.querySelector(".quantity").value = quantity;
 
 document.querySelector(".btn-plus").addEventListener("click", function () {
   quantity++;
   document.querySelector(".quantity").value = quantity;
   totalPrice.textContent = `$${quantity * Number(price.textContent)}`;
+  totalPrice.style.opacity = "1";
 });
 
 document.querySelector(".btn-minus").addEventListener("click", function () {
@@ -78,10 +82,12 @@ document.querySelector(".btn-minus").addEventListener("click", function () {
   if (quantity >= 1) {
     document.querySelector(".quantity").value = quantity;
     totalPrice.textContent = `$${quantity * Number(price.textContent)}`;
+    totalPrice.style.opacity = "1";
   } else {
     quantity = 0;
     document.querySelector(".quantity").value = quantity;
     totalPrice.textContent = "";
+    totalPrice.style.opacity = "0";
   }
 });
 
@@ -90,6 +96,8 @@ document.querySelector(".btn-minus").addEventListener("click", function () {
 const AddButton = document.querySelector(".add");
 
 AddButton.addEventListener("click", function () {
+  totalPrice.style.opacity = "1";
+
   const priceCart = document.querySelector(".price").textContent;
   const quantityCart = document.querySelector(".quantity").value;
   const totalCart = document.querySelector(".sumprice").textContent;
@@ -107,37 +115,39 @@ AddButton.addEventListener("click", function () {
   window.location.reload();
 });
 
-const NameCartPrint = `<div class="cartElement"><div>Product :</div><div>${localStorage.getItem(
-  "Name"
-)}</div>           </div>`;
-console.log(localStorage);
-document
-  .querySelector("#buyItems")
-  .insertAdjacentHTML("beforeend", NameCartPrint);
+if (quantity > 0) {
+  const NameCartPrint = `<div class="cartElement"><div>Product :</div><div>${localStorage.getItem(
+    "Name"
+  )}</div>           </div>`;
+  console.log(localStorage);
+  document
+    .querySelector("#buyItems")
+    .insertAdjacentHTML("beforeend", NameCartPrint);
 
-const PriceCartPrint = `<div class="cartElement"><div>Price :</div><div>$${localStorage.getItem(
-  "Price"
-)}</div></div>`;
-console.log(localStorage);
-document
-  .querySelector("#buyItems")
-  .insertAdjacentHTML("beforeend", PriceCartPrint);
+  const PriceCartPrint = `<div class="cartElement"><div>Price :</div><div>$${localStorage.getItem(
+    "Price"
+  )}</div></div>`;
+  console.log(localStorage);
+  document
+    .querySelector("#buyItems")
+    .insertAdjacentHTML("beforeend", PriceCartPrint);
 
-const QuantityCartPrint = `<div class="cartElement"><div>Quantity :</div><div>${localStorage.getItem(
-  "Quantity"
-)}</div></div>`;
-console.log(localStorage);
-document
-  .querySelector("#buyItems")
-  .insertAdjacentHTML("beforeend", QuantityCartPrint);
+  const QuantityCartPrint = `<div class="cartElement"><div>Quantity :</div><div>${localStorage.getItem(
+    "Quantity"
+  )}</div></div>`;
+  console.log(localStorage);
+  document
+    .querySelector("#buyItems")
+    .insertAdjacentHTML("beforeend", QuantityCartPrint);
 
-const TotalPricePrint = `<div class="cartElement"><div>Total price :</div><div>${localStorage.getItem(
-  "Total price"
-)}</div></div>`;
-console.log(localStorage);
-document
-  .querySelector("#buyItems")
-  .insertAdjacentHTML("beforeend", TotalPricePrint);
+  const TotalPricePrint = `<div class="cartElement"><div>Total price :</div><div>${localStorage.getItem(
+    "Total price"
+  )}</div></div>`;
+  console.log(localStorage);
+  document
+    .querySelector("#buyItems")
+    .insertAdjacentHTML("beforeend", TotalPricePrint);
+}
 
 const PriceHeader = `${localStorage.getItem("Total price")}`;
 console.log(localStorage);
