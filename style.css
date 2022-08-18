@@ -130,11 +130,14 @@ nav ul li:first-child {
 
 .modal {
   position: fixed;
-  top: 0;
-  left: 30%;
+  top:0;
+  left:30%;
+  bottom: auto;
+  right: auto;
   z-index: 15;
   overflow: hidden;
-  width: 35%;
+  max-width: 35%;
+  
 }
 
 .close-modal {
@@ -319,29 +322,7 @@ nav ul li:first-child {
 .add:hover {
   font-weight: bold;
   cursor: pointer;
-  animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
-  transform: translate3d(0, 0, 0);
-  perspective: 1000px;
-}
-
-@keyframes shake {
-  10%,
-  90% {
-    transform: translate3d(-1px, 0, 0);
-  }
-  20%,
-  80% {
-    transform: translate3d(2px, 0, 0);
-  }
-  30%,
-  50%,
-  70% {
-    transform: translate3d(-4px, 0, 0);
-  }
-  40%,
-  60% {
-    transform: translate3d(4px, 0, 0);
-  }
+  transform: scale(1.05);
 }
 
 .prilog {
@@ -369,7 +350,7 @@ nav ul li:first-child {
   overscroll-behavior: contain;
   background-color: #202020;
   width: 300px;
-  height: 500px;
+  height: 520px;
   color: #f0f0f0;
   z-index: 15;
   position: fixed;
@@ -383,10 +364,6 @@ nav ul li:first-child {
   display: none;
 }
 
-.producstOnCart .empty {
-  justify-self: center;
-  margin: 150px auto;
-}
 
 .producstOnCart ul {
   text-align: left;
@@ -403,19 +380,27 @@ nav ul li:first-child {
   display: flex;
 }
 
-.producstOnCart img {
-  width: 90px;
-}
+
 
 .producstOnCart > .checkout {
   font-size: 0.9rem;
-  margin: 20px auto;
   border: none;
   background-color: rgb(250, 97, 41);
   padding: 10px 20px;
   color: #eee;
   cursor: pointer;
   border-radius: 5px;
+}
+
+.producstOnCart > .clearCart{
+  font-size: 0.9rem;
+  border: none;
+  background-color: rgb(250, 97, 41);
+  padding: 10px 20px;
+  color: #eee;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: 10px;
 }
 
 .fa-close:hover {
@@ -522,9 +507,7 @@ nav ul li:first-child {
 .btn:hover {
   font-weight: bold;
   cursor: pointer;
-  animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
-  transform: translate3d(0, 0, 0);
-  perspective: 1000px;
+  transform:scale(1.05);
 }
 .listCart {
   display: flex;

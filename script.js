@@ -19,6 +19,15 @@ openShopCart.addEventListener("click", () => {
   document.querySelector("body").classList.toggle("stopScrolling");
 });
 
+const ClearCart=document.querySelector(".clearCart");
+function ClearCartbtn(){
+  localStorage.clear();
+  window.location.reload();
+}
+ClearCart.addEventListener("click", ClearCartbtn)
+
+
+
 const closeShopCart = document.querySelector("#closeButton");
 const overlay = document.querySelector(".overlay");
 closeShopCart.addEventListener("click", closeCart);
